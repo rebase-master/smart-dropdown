@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h1>Smart Dropdpwn Demo</h1>
+</div>
+
+  <div class="container" id="smart-dd">
+
+    <header id="dd-header">
+      <div class="input-group" (click)="showList = !showList">
+        <p class="form-control" [(ngModel)]="innerValue" ngDefaultControl> {{selectedItem}}</p>
+        <span [ngClass]="[showList? 'glyphicon-chevron-up' : 'glyphicon-chevron-down']" class="input-group-addon glyphicon" id="basic-addon2"></span>
+      </div>
+    </header><!--dd-header-->
+    <div id="container" *ngIf="showList">
+      <div class="search">
+        <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-search" id="sdd-addon3"></span>
+          <input (keyup)="filterList()" [(ngModel)]="filterItem" type="text"
+                 class="form-control"
+                 placeholder="Search..." aria-describedby="sdd-addon3">
+        </div>
+      </div>
+
+      <div class="list">
+        <ul>
+          <li *ngFor="let item of listItems" (click)="selectItem(item)">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+      <div class="ans" *ngIf="listItems.length == 0 && searching">
+        <p>"{{this.filterItem}}" not found.</p>
+        <button *ngIf="addfresh" class="btn btn-primary btn-sm" (click)="addNselect()">Add & Select</button>
+      </div>
+      <div id="moreitems" class="smlb" *ngIf="items.length > maxdisplay && !searching && items.length != listItems.length">
+        <span class="pointer" (click)="showAll()">{{items.length - maxdisplay}} more...</span>
+      </div>
+      <div id="lessitems" class="smlb" *ngIf="items.length > maxdisplay && items.length == listItems.length">
+        <span class="pointer" (click)="showLess()">Show less</span>
+      </div>
+    </div>
+  </div><!--smart-dd-->
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "smart-dropdown",
+  "description": "custom dropdown with feature to add new items to the dropdown list.",
+  "main": "",
+  "authors": [
+    "Mansoor Khan <thisismansoorkhan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

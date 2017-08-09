@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<dropdown
+  title="Select a city"
+  [addfresh]="true"
+  [items]="data"
+  [maxdisplay]="5"
+  [(ngModel)]="choice"
+  ngDefaultControl
+>
+</dropdown>
+
+
+<p *ngIf="choice">You selected: <strong>{{choice}}</strong></p>

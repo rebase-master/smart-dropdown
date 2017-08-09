@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  data: Array<string>;
+  choice: string;
+
+  constructor(){
+
+    this.data = [
+      'Lucknow',
+      'Pune',
+      'Bangalore',
+      'Delhi',
+      'Chennai',
+      'Hyderabad'
+    ];
+
+    this.choice = null;
+
+  }
+
 }
